@@ -1,0 +1,73 @@
+.loader {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    pointer-events: none;
+    animation: suppressionloader 3s;
+    animation-fill-mode: forwards;
+    .load{
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        @include tablet{
+            width: 20%;
+        }
+        @include desktop{
+            width: 10%;
+        }
+        &__bar {
+            background: linear-gradient(170deg, $color-secondary, $color-primary);
+            height: $size-loader*10;
+            width: $size-loader;
+            animation: bars $anim-dur backwards infinite ease-in-out alternate;
+            @for $i from 1 through 5 {
+                &--#{$i} {
+                    animation-delay: $anim-delay * $i;
+                }
+            }
+            @include tablet{
+                height: $size-loader*5;
+                width: $size-loader/2;
+            }
+        }
+    }
+    
+}
+
+@keyframes suppressionloader{
+    75%{
+      opacity: 1;
+    }
+    
+    99%{
+      z-index: 100;
+    
+    }
+    
+    100%{
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+
+@keyframes bars {
+    100% {
+        transform: scaleY(0.5);
+        
+    }
+    0% {
+        transform: scaleY(1.0);
+    }
+}

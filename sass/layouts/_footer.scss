@@ -1,0 +1,33 @@
+footer{
+    background: black;
+    color: white;
+    padding: 15px 10px 15px 10px;
+    @include tablet{
+            text-align: center;
+        }
+    h2{
+        padding: 5px 0 5px 0;
+        @include tablet{
+            font-size: 50px;
+            padding: 20px;
+        }
+    }
+    ul{
+        @include desktop{
+            display: flex;
+            justify-content: space-around;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+        li{
+            margin: 7px 0 7px 0;
+            a{
+                text-decoration: none;
+                color: white;
+                i{
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+}

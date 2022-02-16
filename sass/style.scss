@@ -1,0 +1,20 @@
+@import "./utils/variables";
+@import "./utils/breakpoints";
+@import "./utils/mixins";
+
+@import "./libs/reset";
+@import "./libs/normalize";
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./pages/index";
+@import "./pages/pages-restaurants";
+
+@import "./layouts/header";
+@import "./layouts/footer";
+@import "./layouts/images";
+
+@import "./components/loader";
+@import "./components/button";
+@import "./components/heart-icon";
